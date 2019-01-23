@@ -1,13 +1,12 @@
 $(function () {
-  
+
   $("textarea").on("input", function() {
-    let counter = $(this).val().length;
-    let num = 140 - counter;
-
-    // console.log(counter)
-    $(this).siblings(".counter").text(140 - counter);
-    // console.log($(this).siblings(".counter").text())
-
-    })
-
+    let counter = 140 - $(this).val().length;
+    $(this).siblings(".counter").text(counter);
+    let counterNum = $(this).siblings(".counter")
+    console.log(counter);
+    if (counter < 0) {
+      $(this).siblings(".counter").css("color", "red");
+    } else {$(this).siblings(".counter").css("color", "black"); }
   });
+});
