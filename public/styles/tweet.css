@@ -1,0 +1,79 @@
+section.tweet {
+    position: relative;
+    top: 20px;
+    border: 1px solid #00a087;
+    border-radius: 12px;
+    background-color: white;
+    width: 420px;
+    margin: 0px auto;
+    padding: 0px 10px;
+    height: 220px;
+    width: 420px;
+}
+
+.tweet footer {
+  position: relative;
+/*   right:px;
+  top: 13px; */
+/*   bottom: px; */
+/*   border: 1px solid red; */
+  border-top-style: dashed black;
+  right: 10px;
+  width: 418px;
+  height: 30px;
+  padding: 0px 0px 0px 0px;
+  border-radius: 0px 0px 11px 11px;
+}
+
+.tweet h2 {
+  top: .01em;
+  bottom: ;
+  left: 70px;
+  position: absolute;
+  display: inline-block;
+}
+
+.tweet p {
+  position: relative;
+  display: inline-block;
+  float: right;
+/*   margin: .1em 0em 0em 0em; */
+  padding: 2px 20px 0px 0px;
+}
+
+.tweet img {
+  position: relative;
+  border-radius: 12px;
+  padding: 8px 0px 0px 8px;
+}
+
+.tweet h3 {
+/*   position: relative; */
+/*   margin: 8px 0px 80px 0px; */
+  padding: 20px 0px 30px 0px;
+  font-weight: lighter;
+/*   left: .5em; */
+  top: .8em;
+  font: 300;
+}
+/* work on the margin here */
+.tweet h4 {
+  position: relative;
+  border-top-style: solid;
+  border-top-width: 1px;
+  width: 419px;
+  font-weight:lighter;
+  padding: 8px 0px 0px 8px;
+}
+
+.tweet header {
+  position: relative;
+  background-color: #00a087;
+  width: 418px;
+/*   margin: 0px 100px 0px 0px; */
+  right: 10px;
+  height: 68px;
+  border-radius: 11px 11px 0px 0px;
+
+}
+
