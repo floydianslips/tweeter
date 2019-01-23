@@ -23,6 +23,7 @@ body {
 }
 
 main {
+  height: 100vh;
   position: inherit;
   width: 450px;
   background-color: white;
