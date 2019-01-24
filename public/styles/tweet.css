@@ -1,5 +1,6 @@
 section.tweet {
   opacity: 0.8;
+  z-index: 0;
   position: relative;
   top: 20px;
   border: 1px solid #00a087;
@@ -18,10 +19,6 @@ section.tweet:hover {
 
 .tweet footer {
   position: relative;
-/*   right:px;
-  top: 13px; */
-/*   bottom: px; */
-/*   border: 1px solid red; */
   border-top-style: dashed black;
   right: 10px;
   width: 418px;
@@ -53,16 +50,13 @@ section.tweet:hover {
 }
 
 .tweet h3 {
-/*   position: relative; */
-/*   margin: 8px 0px 80px 0px; */
   padding: 20px 0px 30px 0px;
   font-weight: lighter;
-/*   left: .5em; */
   top: .8em;
   font: 300;
   margin: 10px auto 12px auto;
 }
-/* work on the margin here */
+
 .tweet h4 {
   position: relative;
   border-top-style: solid;

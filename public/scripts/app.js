@@ -11,7 +11,7 @@ $(function () {
   function createTweetElement (data) {
     let $tweetSection = $("<section class='tweet'>");
     let $tweetHeader = $("<header class='tweet'>");
-      let $tweetUser = $("<h2 class='tweet'>").text(data.user.name);
+    let $tweetUser = $("<h2 class='tweet'>").text(data.user.name);
     let $tweetHandle = $("<p class='tweet'>").text(data.user.handle);
     let $tweetImg = $("<img src=" + data.user.avatars.small + " class='tweet'>");
     let $tweetContent = $("<h3 class='tweet'>").text(data.content.text);
@@ -24,39 +24,53 @@ $(function () {
   }
 
   $("#postTweets").on('submit', function(event) {
-    console.log($("textarea").val().length);
     event.preventDefault();
+    $("#error-alert").slideUp();
     if ($("textarea").val().length > 140) {
-      alert("Gotcha! You tried to sneak too many letters in");
+      $("#error-alert").text("Too many Characters");
+      $("#error-alert").slideDown();
     } else if ($("textarea").val().length === 0  ) {
-        alert("Hard to tweet nada");
+      $("#error-alert").text("Please enter Tweet");
+      $("#error-alert").slideDown();
     } else {
+        $("#error-alert").text("");
         const serialized = $(this).serialize();
         $.ajax({
           method: "POST",
           url: "/tweets",
           data: serialized,
           success: function() {
-          getOrderedTweets();
+            getOrderedTweets();
           }
         });
-
-
-      }
+        $("textarea").val("");
+        $("span.counter").text("140");
+    }
   });
+
   const allTweets = $("#tweet-container");
+
   function getOrderedTweets() {
     $.ajax({
     method: "GET",
     url: "/tweets"
     }).done(function (tweets) {
-        allTweets.empty();
-        tweets.forEach((tweet) => {
-          const element = createTweetElement(tweet);
-          allTweets.prepend(element);
-        });
+      allTweets.empty();
+      tweets.forEach((tweet) => {
+        const element = createTweetElement(tweet);
+        allTweets.prepend(element);
+      });
     });
   }
   getOrderedTweets();
+
+  $("#composeButton").click(function() {
+    $(".new-tweet").slideToggle();
+  });
+
+  $("#composeButton").click(function() {
+    $(".new-tweet textarea").focus();
+  });
+
 });
 
