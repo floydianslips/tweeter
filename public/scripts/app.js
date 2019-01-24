@@ -1,5 +1,6 @@
 $(function () {
 
+
   function renderTweets(tweets) {
       tweets.forEach(function(entry) {
       let cookedBird = createTweetElement(entry);
@@ -32,16 +33,30 @@ $(function () {
     } else {
         const serialized = $(this).serialize();
         $.ajax({
-        method: "POST",
-        url: "/tweets",
-        data: serialized
+          method: "POST",
+          url: "/tweets",
+          data: serialized,
+          success: function() {
+          getOrderedTweets();
+          }
         });
+
+
       }
   });
-
-  $.ajax('/tweets', { method: 'GET' })
-    .then(function (getTweets) {
-      renderTweets(getTweets);
+  const allTweets = $("#tweet-container");
+  function getOrderedTweets() {
+    $.ajax({
+    method: "GET",
+    url: "/tweets"
+    }).done(function (tweets) {
+        allTweets.empty();
+        tweets.forEach((tweet) => {
+          const element = createTweetElement(tweet);
+          allTweets.prepend(element);
+        });
     });
+  }
+  getOrderedTweets();
 });
 
