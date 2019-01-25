@@ -1,5 +1,5 @@
 section.tweet {
-  opacity: 0.8;
+  /* opacity: 0.8; */
   z-index: 0;
   position: relative;
   top: 20px;
@@ -13,12 +13,16 @@ section.tweet {
   margin: 0px auto 12px auto;
   }
 
-section.tweet:hover {
+section.tweet:hover header {
  opacity: 1;
- }
+}
 
 section.tweet:hover i {
   visibility: visible;
+}
+
+section.tweet:hover {
+  border: solid #244751 1px;
 }
 
 .tweet footer {
@@ -44,7 +48,6 @@ section.tweet:hover i {
   position: relative;
   display: inline-block;
   float: right;
-/*   margin: .1em 0em 0em 0em; */
   padding: 2px 20px 0px 0px;
 }
 
@@ -74,6 +77,7 @@ section.tweet:hover i {
 
 .tweet header {
   position: relative;
+  opacity: .8;
   background-color: #00a087;
   width: 418px;
   right: 10px;

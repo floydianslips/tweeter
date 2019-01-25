@@ -1,14 +1,16 @@
 $(function () {
 
-
+  // shows a list of previous tweets
   function renderTweets(tweets) {
-      tweets.forEach(function(entry) {
-      let cookedBird = createTweetElement(entry);
-      $("#tweet-container").append(cookedBird);
+    tweets.forEach(function(entry) {
+    let cookedBird = createTweetElement(entry);
+    $("#tweet-container").append(cookedBird);
     });
   }
 
+  // generate all the elements for a new tweet and populate them with data from "textarea"
   function createTweetElement (data) {
+    // convert time from milliseconds into days
     const timeStamp = (() => {
       let timeCreated = data.created_at;
       let dateDiff = Date.now() - timeCreated;
@@ -19,7 +21,6 @@ $(function () {
       } else {return Math.floor(dateDiff/8.64e+7) + " Days ago"; }
     });
 
-    timeStamp();
     let $tweetSection = $("<section class='tweet'>");
     let $tweetHeader = $("<header class='tweet'>");
     let $tweetUser = $("<h2 class='tweet'>").text(data.user.name);

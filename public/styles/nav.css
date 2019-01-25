@@ -26,16 +26,16 @@
   opacity: .9;
   font-weight: normal;
   font-size: larger;
-/*   float: right; */
   right: 3px;
   color: #00a087;
   height: 60px;
   width: 100px;
-  border: solid #244751;
+  border: solid white;
   border-radius: 8px;
 }
 
 #nav-bar input:hover {
-  opacity: 1
+  opacity: 1;
+  border: solid #244751;
 }
 
