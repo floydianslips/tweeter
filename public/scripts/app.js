@@ -79,8 +79,10 @@ $(function () {
       });
     });
   }
+
   getOrderedTweets();
 
+  // slide new tweet box from under tweets
   $(".compose-button h4").click(function() {
     $(".new-tweet").slideToggle();
   });

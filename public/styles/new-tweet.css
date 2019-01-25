@@ -1,5 +1,4 @@
 section.new-tweet {
-    margin-bottom
     border: 1px solid #244751;
     border-radius: 12px;
     background-color: #eee;
@@ -28,16 +27,10 @@ section.new-tweet h2 {
 span.counter {
     float: right;
     margin: 0px 12px 0px 0px;
-/*     position: relative; */
-/*     left: 305px; */
 }
 
 #error-alert {
-/*     width: 20px; */
-/*     height: 10px; */
     border: solid red 1px;
-/*     background-color: gray; */
-    
     color: red;
     display: none;
 }
