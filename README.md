@@ -20,3 +20,8 @@ Feel free to use this app in any fashion you choose.
 - Chance
 - MongoDB
 - md5
+
+## Screenshots
+
+!["Screenshot of composing a tweet"](https://github.com/floydianslips/tweeter/blob/master/docs/create-new-tweet.png?raw=true)
+!["Screenshot of tweets posted"](https://github.com/floydianslips/tweeter/blob/master/docs/current-tweets.png?raw=true)
