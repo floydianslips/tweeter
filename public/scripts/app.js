@@ -9,6 +9,17 @@ $(function () {
   }
 
   function createTweetElement (data) {
+    const timeStamp = (() => {
+      let timeCreated = data.created_at;
+      let dateDiff = Date.now() - timeCreated;
+        if (dateDiff < 8.64e+7) {
+          return "Today";
+      } else if (dateDiff > 8.64e+7 && dateDiff < (8.64e+7 * 2)) {
+          return "Yesterday";
+      } else {return Math.floor(dateDiff/8.64e+7) + " Days ago"; }
+    });
+
+    timeStamp();
     let $tweetSection = $("<section class='tweet'>");
     let $tweetHeader = $("<header class='tweet'>");
     let $tweetUser = $("<h2 class='tweet'>").text(data.user.name);
@@ -16,10 +27,15 @@ $(function () {
     let $tweetImg = $("<img src=" + data.user.avatars.small + " class='tweet'>");
     let $tweetContent = $("<h3 class='tweet'>").text(data.content.text);
     let $tweetFooter = $("<footer class='tweet'>");
-    let $tweetDate = $("<h4 class='tweet'>").text(data.created_at);
-    let $footer = $tweetFooter.append($tweetDate);
+    let $loveIcon = $("<i class='fas fa-heart'></i>");
+    let $flagIcon = $("<i class='fas fa-flag'></i>");
+    let $retweetIcon = $("<i class='fas fa-retweet'></i>");
+    let $tweetDate = $("<h4 class='tweet'>").text(timeStamp());
+    let $footer = $tweetFooter.append($flagIcon).append($retweetIcon).append($loveIcon).append($tweetDate);
     let $header = $tweetHeader.append($tweetImg).append($tweetUser).append($tweetHandle);
     let $fullTweet = $tweetSection.append($header).append($tweetContent).append($footer);
+
+
     return $fullTweet;
   }
 

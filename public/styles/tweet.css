@@ -15,6 +15,10 @@ section.tweet {
 
 section.tweet:hover {
  opacity: 1;
+ }
+
+section.tweet:hover i {
+  visibility: visible;
 }
 
 .tweet footer {
@@ -25,6 +29,7 @@ section.tweet:hover {
   height: 30px;
   padding: 0px 0px 0px 0px;
   border-radius: 0px 0px 11px 11px;
+/*   overflow: auto; */
 }
 
 .tweet h2 {
@@ -77,3 +82,24 @@ section.tweet:hover {
 
 }
 
+.fa-retweet {
+  padding: 5px 3px 0px 0px;
+  float: right;
+  visibility: hidden;
+/*   display: none; */
+  
+}
+
+.fa-heart {
+  padding: 5px 3px 0px 0px;
+  float: right;
+  visibility: hidden;
+/*   display: none; */
+}
+
+.fa-flag {
+  padding: 5px 10px 0px 0px;
+  float:right;
+  visibility: hidden;
+/*   display: none; */
+}
