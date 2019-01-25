@@ -81,11 +81,11 @@ $(function () {
   }
   getOrderedTweets();
 
-  $("#composeButton").click(function() {
+  $(".compose-button h4").click(function() {
     $(".new-tweet").slideToggle();
   });
 
-  $("#composeButton").click(function() {
+  $(".compose-button h4").click(function() {
     $(".new-tweet textarea").focus();
   });
 

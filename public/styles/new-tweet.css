@@ -22,6 +22,7 @@ section.new-tweet h2 {
 
 .new-tweet input {
     margin-top: 0px 0px 0px 0px;
+    cursor: pointer;
 }
 
 span.counter {
