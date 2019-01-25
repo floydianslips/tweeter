@@ -1,5 +1,4 @@
 section.tweet {
-  /* opacity: 0.8; */
   z-index: 0;
   position: relative;
   top: 20px;
@@ -11,7 +10,7 @@ section.tweet {
   padding: 0px 10px;
   width: 420px;
   margin: 0px auto 12px auto;
-  }
+}
 
 section.tweet:hover header {
  opacity: 1;
@@ -33,12 +32,10 @@ section.tweet:hover {
   height: 30px;
   padding: 0px 0px 0px 0px;
   border-radius: 0px 0px 11px 11px;
-/*   overflow: auto; */
 }
 
 .tweet h2 {
   top: .01em;
-  bottom: ;
   left: 70px;
   position: absolute;
   display: inline-block;

@@ -36,10 +36,9 @@ $(function () {
     let $header = $tweetHeader.append($tweetImg).append($tweetUser).append($tweetHandle);
     let $fullTweet = $tweetSection.append($header).append($tweetContent).append($footer);
 
-
     return $fullTweet;
   }
-
+  // populate db with new tweets, giving relevent errors
   $("#postTweets").on('submit', function(event) {
     event.preventDefault();
     $("#error-alert").slideUp();
@@ -50,23 +49,24 @@ $(function () {
       $("#error-alert").text("Please enter Tweet");
       $("#error-alert").slideDown();
     } else {
-        $("#error-alert").text("");
-        const serialized = $(this).serialize();
-        $.ajax({
-          method: "POST",
-          url: "/tweets",
-          data: serialized,
-          success: function() {
-            getOrderedTweets();
-          }
-        });
-        $("textarea").val("");
-        $("span.counter").text("140");
+      $("#error-alert").text("");
+      const serialized = $(this).serialize();
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: serialized,
+        success: function() {
+          getOrderedTweets();
+        }
+      });
+      $("textarea").val("");
+      $("span.counter").text("140");
     }
   });
 
   const allTweets = $("#tweet-container");
 
+  // grab tweets from db and populate the homepage
   function getOrderedTweets() {
     $.ajax({
     method: "GET",
@@ -90,4 +90,3 @@ $(function () {
   });
 
 });
-
