@@ -1,10 +1,9 @@
 # Tweeter Project
 
 Tweeter is a simple, single-page Twitter clone that is fun for all ages.
-This app utilises AJAX, CSS, JS, jQuery, Node, Express and MongoDB. 
+This app utilises AJAX, CSS, JS, jQuery, Node, Express and MongoDB.
 
-Feel free to use this app in any fashion you choose. 
-
+Feel free to use this app in any fashion you choose.
 
 ## Getting Started
 
